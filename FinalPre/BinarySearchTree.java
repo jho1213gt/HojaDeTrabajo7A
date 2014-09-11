@@ -9,49 +9,76 @@
 * Referencia: Duane A. Bailey. (2007). Java Structures: Data Structructures in Java for the Principled Programmer. Edicion sqrt(7)
 */
 
+/*
+* BST que extiende al Comparable que hara unicamente cuando reciba y cumpla la condicion necesaria
+*/
 import java.util.Iterator;
 import java.util.Comparator;
 
 public class BinarySearchTree<E extends Comparable<E>> extends AbstractStructure<E> implements OrderedStructure<E>{
     
+	/*
+	* variables protegidos para que no puedan ser modificado sun funcion
+	*/
     protected BinaryTree<E> root;
     protected final BinaryTree<E> EMPTY = new BinaryTree<E>();
     protected int count;
     protected Comparator<E> ordering;
 
+	/*
+	* Llamando a comparador natural
+	*/
     public BinarySearchTree()
     {
         this(new NaturalComparator<E>());
     }
 
+	/*
+	* BST para desginar orden alternante con ciertas propiedades
+	*/
     public BinarySearchTree(Comparator<E> alternateOrder)
     {
         root = EMPTY;
         count = 0;
         ordering = alternateOrder;
     }
-    
+	
+    /*
+	* metodo de verificacion para ver si esta vacio
+	*/
     public boolean isEmpty()
     {
         return root == EMPTY;
     }
     
+	/*
+	* metodo para limpiar 
+	*/
     public void clear()
     {
         root = new BinaryTree<E>();
         count = 0;
     }
     
+	/*
+	* metodo de verifiacion del tamanio total que tiene 
+	*/
     public int size()
     {
         return count;
     }
     
+	/*
+	* metodo de iterador 
+	*/
     public Iterator<E> iterator()
     {
         return root.inorderIterator();
     }
 
+	/*
+	* De aqui en adelante sigue para la logica arbol segun Inorder, Preorder, postorder
+	*/
     public int hashCode(){
         return root.hashCode();
     } 

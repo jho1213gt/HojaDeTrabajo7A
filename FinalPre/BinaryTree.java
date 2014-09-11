@@ -8,10 +8,16 @@
 * - Kuk Ho Chung 13279
 */
 
+/*
+* Importando las librerias necesarios para el arbol binario
+*/
 import java.lang.Math;
 import java.util.Iterator;
 
-public class BinaryTree<E>{
+/*
+* Clase de arbol binario generico
+*/
+public class BinaryTree<E>{ 
 
     protected E val; // value associated with node
 	protected BinaryTree<E> parent; // parent of node

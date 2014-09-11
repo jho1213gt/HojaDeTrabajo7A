@@ -9,6 +9,9 @@
 * En referencia de la pagina http://www.cs.pomona.edu/classes/cs062/bailey/structure5/Association.java
 */
 
+/*
+* Importando la libreria de mapa
+*/
 import java.util.Map;
 
 public class Association<K,V> {
