@@ -1,0 +1,4 @@
+Dog, perro
+Watch, reloj
+Phone, celular
+Laptop, laptop
